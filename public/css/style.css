@@ -1,0 +1,155 @@
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,600,700,900);
+
+/*
+    Globals
+*/
+
+html {
+    height: 100%;
+}
+
+body {
+    font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+    height: 100%;
+    color: #505050;
+    overflow-x: hidden;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.no-border {
+    border: 0 none !important;
+}
+
+.no-padding {
+    padding: 0 !important;
+}
+
+.no-margin {
+    margin: 0 !important;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    transition: background-color 5000s ease-in-out 0s;
+}
+
+/*
+    Typography
+*/
+
+a {
+    color: #434343;
+}
+
+a:hover, a:active, a:focus {
+    outline: 0;
+    text-decoration: none;
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+.lowercase {
+    text-transform: lowercase;
+}
+
+/*
+    Spaces
+*/
+
+.height-5 {
+    height: 5px;
+    clear: both;
+}
+.height-10 {
+    height: 10px;
+    clear: both;
+}
+
+.height-15 {
+    height: 15px;
+    clear: both;
+}
+
+.height-20 {
+    height: 20px;
+    clear: both;
+}
+.height-25 {
+    height: 25px;
+    clear: both;
+}
+
+.height-30 {
+    height: 30px;
+    clear: both;
+}
+
+.height-35 {
+    height: 35px;
+    clear: both;
+}
+
+/*
+    Colors / background-colors
+*/
+
+.dark-bg{
+    background: #3f4b56;
+}
+
+/*
+    Main Styles
+*/
+
+/*
+    Header
+*/
+
+header.platform-header{
+    padding: 10px 0;
+}
+
+header.platform-header .navbar{
+    margin-bottom: 0;
+}
+
+header.platform-header .navbar .navbar-collapse .navbar-nav>li>a{
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 13px;
+    font-weight: 600;
+    background: none;
+}
+header.platform-header .navbar .navbar-collapse .navbar-nav>li>a:hover,
+header.platform-header .navbar .navbar-collapse .navbar-nav>li>a:focus,
+header.platform-header .navbar .navbar-collapse .navbar-nav>li>a:active{
+    background: none;
+    color: #bcb7b7;
+}
+header.platform-header .navbar .dropdown-menu{
+    background: #3f4b56;
+}
+header.platform-header .navbar .dropdown-menu li{
+    margin: 5px 0;
+}
+header.platform-header .navbar .dropdown-menu li a{
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 12px;
+}
+
+header.platform-header .navbar .dropdown-menu li a:hover{
+    background: none;
+    color: #ff780a;
+}
+
+/**/
