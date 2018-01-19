@@ -11,7 +11,7 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Styles -->
-    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('/images/favicon.ico') }}">
 
     <!-- Font Awesome -->
     <link href="{{ asset('css/font-awesome/font-awesome.min.css') }}" rel="stylesheet">
@@ -28,7 +28,7 @@
     <header class="platform-header">
         <div class="container">
             <div class="col-sm-3">
-                <img height="45" src="images/platform-logo.png" alt="Crunche Logo">
+                <img height="45" src="{{ asset('/images/platform-logo.png') }}" alt="Crunche Logo">
             </div>
             <div class="col-sm-9">
                 <nav class="navbar">
