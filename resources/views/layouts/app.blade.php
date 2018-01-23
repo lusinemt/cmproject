@@ -21,11 +21,11 @@
 
     <!-- Required Prerequisites -->
     <script src="{{ asset('js/app.js') }}"></script>
-    <script type="text/javascript" src="//cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script src="{{ asset('js/plugins/MomentsJS/moments.min.js') }}"></script>
 
     <!-- Date Range Picker -->
-    <script type="text/javascript" src="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.js"></script>
-    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.css" />
+    <script src="{{ asset('js/plugins/Daterangepicker/daterangepicker.js')  }}"></script>
+    <link rel="stylesheet"  href="{{ asset('css/plugins/Daterangepicker/daterangepicker.css')  }}">
 
     <!-- Main Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -170,7 +170,6 @@
 </div>
 
 @yield('content')
-
 <!-- Scripts -->
 <script src="{{ asset('js/scripts.js') }}"></script>
 </body>
