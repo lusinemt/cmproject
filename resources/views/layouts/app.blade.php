@@ -17,24 +17,33 @@
     <link href="{{ asset('css/font-awesome/font-awesome.min.css') }}" rel="stylesheet">
 
     <!-- Bootstrap -->
-    <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/bootstrap.css') }}" rel="stylesheet">
+
+    <!-- Required Prerequisites -->
+    <script src="{{ asset('js/app.js') }}"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+
+    <!-- Date Range Picker -->
+    <script type="text/javascript" src="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.js"></script>
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.css" />
 
     <!-- Main Styles -->
-    <link href="{{ asset('css/style.css') }}" rel="stylesheet">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/style.css') }}" rel="stylesheet">
 </head>
 <body>
 <div class="dark-bg">
     <header class="platform-header">
         <div class="container">
-            <div class="col-sm-3">
+            <div class="col-sm-2">
                 <img height="45" src="{{ asset('/images/platform-logo.png') }}" alt="Crunche Logo">
             </div>
-            <div class="col-sm-9">
+            <div class="col-sm-8">
                 <nav class="navbar">
                     <!-- Brand and toggle get grouped for better mobile display -->
                     <div class="navbar-header">
-                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                                data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
                             <span class="sr-only">Toggle navigation</span>
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
@@ -43,143 +52,126 @@
                     </div>
 
                     <!-- Collect the nav links, forms, and other content for toggling -->
-                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                        <ul class="nav navbar-nav">
-                            <li class="active"><a href="#">Home <span class="sr-only">(current)</span></a></li>
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Campaigns</a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="#">Network Campaigns</a></li>
-                                    <li><a href="#">Vault Campaigns</a></li>
-                                    <li><a href="#">External Campaigns</a></li>
-                                    <li><a href="{{ url('campaign/create') }}">Create Campaign</a></li>
-                                    <li><a href="#">Generate Campaign Links</a></li>
-                                    <li><a href="#">Test Partner Link</a></li>
-                                    <li><a href="#">Deconstruct Link</a></li>
-                                    <li><a href="#">Pixel Reference</a></li>
-                                    <li><a href="#">System Changes</a></li>
-                                    <li><a href="#">Scrubs</a></li>
-                                    <li><a href="#">Invoicing - Manage</a></li>
-                                    <li><a href="#">Invoicing - View</a></li>
-                                    <li><a href="#">Invoice Manager</a></li>
-                                    <li><a href="#">Advertiser Invoicing/Commission</a></li>
-                                    <li><a href="#">Review Inactive Campaigns</a></li>
-                                    <li><a href="#">Banner Manager</a></li>
-                                </ul>
-                            </li>
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Traffic</a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="#">Statistics</a></li>
-                                    <li><a href="#">Hourly</a></li>
-                                    <li><a href="#">Traffic Lookup</a></li>
-                                    <li><a href="#">Placement Lookup</a></li>
-                                    <li><a href="#">Conversion Analysis</a></li>
-                                    <li><a href="#">Referrer Analysis</a></li>
-                                    <li><a href="#">Display Optimizer</a></li>
-                                </ul>
-                            </li>
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Publishers</a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="#">Create New</a></li>
-                                    <li><a href="#">Placement Stats</a></li>
-                                    <li><a href="#">Missing Placements</a></li>
-                                    <li><a href="#">API Request Log</a></li>
-                                    <li><a href="#">Contacts Review</a></li>
-                                    <li><a href="#">Messages</a></li>
-                                    <li><a href="#">Applications</a></li>
-                                    <li><a href="#">Commission Manager</a></li>
-                                </ul>
-                            </li>
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Advertisers</a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="#">List</a></li>
-                                    <li><a href="#">Create New</a></li>
-                                </ul>
-                            </li>
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">VaultAds</a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="#">List AdBlocks</a></li>
-                                    <li><a href="#">Create AdBlock</a></li>
-                                </ul>
-                            </li>
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Tools</a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="#">Redirect Tracer</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div><!-- /.navbar-collapse -->
+                    @if (Auth::check())
+                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                            <ul class="nav navbar-nav platform-header">
+                                <li class="active"><a href="#">Home <span class="sr-only">(current)</span></a></li>
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                                       aria-haspopup="true" aria-expanded="false">Campaigns</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#">Network Campaigns</a></li>
+                                        <li><a href="#">Vault Campaigns</a></li>
+                                        <li><a href="#">External Campaigns</a></li>
+                                        <li><a href="{{ url('campaign/create') }}">Create Campaign</a></li>
+                                        <li><a href="#">Generate Campaign Links</a></li>
+                                        <li><a href="#">Test Partner Link</a></li>
+                                        <li><a href="#">Deconstruct Link</a></li>
+                                        <li><a href="#">Pixel Reference</a></li>
+                                        <li><a href="#">System Changes</a></li>
+                                        <li><a href="#">Scrubs</a></li>
+                                        <li><a href="#">Invoicing - Manage</a></li>
+                                        <li><a href="#">Invoicing - View</a></li>
+                                        <li><a href="#">Invoice Manager</a></li>
+                                        <li><a href="#">Advertiser Invoicing/Commission</a></li>
+                                        <li><a href="#">Review Inactive Campaigns</a></li>
+                                        <li><a href="#">Banner Manager</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                                       aria-haspopup="true" aria-expanded="false">Traffic</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#">Statistics</a></li>
+                                        <li><a href="#">Hourly</a></li>
+                                        <li><a href="#">Traffic Lookup</a></li>
+                                        <li><a href="#">Placement Lookup</a></li>
+                                        <li><a href="#">Conversion Analysis</a></li>
+                                        <li><a href="#">Referrer Analysis</a></li>
+                                        <li><a href="#">Display Optimizer</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                                       aria-haspopup="true" aria-expanded="false">Publishers</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#">Create New</a></li>
+                                        <li><a href="#">Placement Stats</a></li>
+                                        <li><a href="#">Missing Placements</a></li>
+                                        <li><a href="#">API Request Log</a></li>
+                                        <li><a href="#">Contacts Review</a></li>
+                                        <li><a href="#">Messages</a></li>
+                                        <li><a href="#">Applications</a></li>
+                                        <li><a href="#">Commission Manager</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                                       aria-haspopup="true" aria-expanded="false">Advertisers</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#">List</a></li>
+                                        <li><a href="#">Create New</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                                       aria-haspopup="true" aria-expanded="false">VaultAds</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#">List AdBlocks</a></li>
+                                        <li><a href="#">Create AdBlock</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                                       aria-haspopup="true" aria-expanded="false">Tools</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#">Redirect Tracer</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div><!-- /.navbar-collapse -->
+                    @endif
                 </nav>
+            </div>
+            <div class="col-sm-2">
+                <!-- Right Side Of Navbar -->
+                <ul class="logged-user-info">
+                    <!-- Authentication Links -->
+                    @guest
+                        <li><a href="{{ route('login') }}">Login</a></li>
+                        <li><a href="{{ route('register') }}">Register</a></li>
+                    @else
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                               aria-expanded="false" aria-haspopup="true">
+                                {{ Auth::user()->name }} <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        Logout
+                                    </a>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                          style="display: none;">
+                                        {{ csrf_field() }}
+                                    </form>
+                                </li>
+                            </ul>
+                        </li>
+                    @endguest
+                </ul>
             </div>
         </div>
     </header>
 </div>
-    <div id="app">
-        <nav class="navbar navbar-default navbar-static-top">
-            <div class="container">
-                <div class="navbar-header">
 
-                    <!-- Collapsed Hamburger -->
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse" aria-expanded="false">
-                        <span class="sr-only">Toggle Navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
+@yield('content')
 
-                    <!-- Branding Image -->
-                    <a class="navbar-brand" href="{{ url('/') }}">
-                        {{ config('app.name', 'Laravel') }}
-                    </a>
-                </div>
-
-                <div class="collapse navbar-collapse" id="app-navbar-collapse">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="nav navbar-nav">
-                        &nbsp;
-                    </ul>
-
-                    <!-- Right Side Of Navbar -->
-                    <ul class="nav navbar-nav navbar-right">
-                        <!-- Authentication Links -->
-                        @guest
-                            <li><a href="{{ route('login') }}">Login</a></li>
-                            <li><a href="{{ route('register') }}">Register</a></li>
-                        @else
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
-                                    {{ Auth::user()->name }} <span class="caret"></span>
-                                </a>
-
-                                <ul class="dropdown-menu">
-                                    <li>
-                                        <a href="{{ route('logout') }}"
-                                            onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                            Logout
-                                        </a>
-
-                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                            {{ csrf_field() }}
-                                        </form>
-                                    </li>
-                                </ul>
-                            </li>
-                        @endguest
-                    </ul>
-                </div>
-            </div>
-        </nav>
-
-        @yield('content')
-    </div>
-
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}"></script>
+<!-- Scripts -->
+<script src="{{ asset('js/scripts.js') }}"></script>
 </body>
 </html>

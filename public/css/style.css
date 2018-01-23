@@ -1,4 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,600,700,900);
+@import url('https://fonts.googleapis.com/css?family=Lato');
 
 /*
     Globals
@@ -9,7 +10,7 @@ html {
 }
 
 body {
-    font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+    font-family: 'Lato', sans-serif;
     height: 100%;
     color: #505050;
     overflow-x: hidden;
@@ -40,11 +41,11 @@ ul {
 .crunchie-btn{
     background: #fff;
     color: #ff780a;
-    border: 1px solid #ff780a;
+    border: 1px solid #ff780a !important;
 }
 .crunchie-btn:hover, .crunchie-btn:focus, .crunchie-btn.active{
     background: #ff780a;
-    color: #fff;
+    color: #fff !important;
     outline: none;
 }
 
@@ -60,12 +61,13 @@ input:-webkit-autofill:active {
 */
 
 a {
-    color: #434343;
+    color: #ff780a;
 }
 
 a:hover, a:active, a:focus {
     outline: 0;
-    text-decoration: none;
+    color: #ff780a;
+    text-decoration: underline;
 }
 
 .uppercase {
@@ -135,6 +137,9 @@ a:hover, a:active, a:focus {
 .pt-1{
     padding-top: 1px;
 }
+.mr-3{
+    margin-right: 3px;
+}
 
 /*
     Colors / background-colors
@@ -173,7 +178,7 @@ header.platform-header .navbar .navbar-collapse .navbar-nav>li>a:active{
     background: none;
     color: #bcb7b7;
 }
-header.platform-header .navbar .dropdown-menu{
+header.platform-header .navbar .dropdown-menu, header.platform-header .logged-user-info li ul.dropdown-menu{
     background: #3f4b56;
 }
 header.platform-header .navbar .dropdown-menu li{
@@ -184,8 +189,19 @@ header.platform-header .navbar .dropdown-menu li a{
     text-transform: uppercase;
     font-size: 12px;
 }
+header.platform-header .logged-user-info{
+    margin-top: 12px;
+}
+header.platform-header .logged-user-info li a{
+    color: #fff;
+    font-size: 12px;
+}
+header.platform-header .logged-user-info li ul.dropdown-menu{
 
-header.platform-header .navbar .dropdown-menu li a:hover{
+}
+
+header.platform-header .navbar .dropdown-menu li a:hover,
+header.platform-header .logged-user-info li ul.dropdown-menu>li>a:hover{
     background: none;
     color: #ff780a;
 }
@@ -212,6 +228,9 @@ header.platform-header .navbar .dropdown-menu li a:hover{
     background-color: #ff780a;
     border: none;
 }
+.login-panel.panel-default .welcoming-txt p{
+    color: #2f3951;
+}
 .login-panel.panel-default input:focus {
     border-color: #ff780a;
     outline: 0;
@@ -220,6 +239,26 @@ header.platform-header .navbar .dropdown-menu li a:hover{
 }
 /**/
 
+.home-page-content .panel-default{
+    padding: 10px;
+}
+.home-page-content .panel-default .panel-title{
+    color: rgb(255, 255, 255);
+    font-weight: 600;
+    background: rgb(63, 75, 86);
+    padding: 15px 10px;
+    border-radius: 3px;
+}
+.home-page-content .flex-content span{
+    flex: 1;
+}
+.home-page-content .flex-content input{
+    flex: 5;
+    margin-right: 5px;
+}
+.home-page-content .flex-content select{
+    flex: 2;
+}
 .main-content .panel{
     margin-bottom: 0;
 }

@@ -60,8 +60,8 @@
                                 <p>Not Selected</p>
                                 <a href="#">select</a>
                                 <div class="height-20"></div>
-                                <p class="h5">Campaign Start Date</p>
-                                <input class="form-control" type="text" id="startDate"/>
+                                <p class="h5">Campaign Start/End Date</p>
+                                <input name="datePicker" class="form-control" type="text" id="startDate"/>
                             </div>
                             <div class="col-sm-4">
                                 <div class="row">
@@ -96,9 +96,6 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="height-35"></div>
-                                <p class="h5">Campaign End Date</p>
-                                <input class="form-control" type="text" id="endDate"/>
                             </div>
                             <div class="col-sm-5">
                                 <p class="h5 content-title">Partner Rate (default)</p>

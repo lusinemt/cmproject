@@ -14,6 +14,15 @@
     <!-- Font Awesome -->
     <link href="{{ asset('css/font-awesome/font-awesome.min.css') }}" rel="stylesheet">
 
+
+    <!-- Include Required Prerequisites -->
+    <script type="text/javascript" src="//cdn.jsdelivr.net/jquery/1/jquery.min.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+
+    <!-- Include Date Range Picker -->
+    <script type="text/javascript" src="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.js"></script>
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.css" />
+
     <!-- Bootstrap -->
     <link href="{{ asset('css/bootstrap.css') }}" rel="stylesheet">
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
@@ -53,6 +62,11 @@
                     <h4>Login</h4>
                 </div>
                 <div class="panel-body">
+                    <div class="welcoming-txt">
+                        <p>Welcome back.</p>
+                        <p>Please enter your login details to access your Crunchie account.</p>
+                    </div>
+                    <div class="height-25"></div>
                     <form class="form-horizontal" method="POST" action="{{ route('login') }}">
                         {{ csrf_field() }}
 
@@ -100,6 +114,12 @@
                                 <button type="submit" class="btn crunchie-btn">
                                     Login
                                 </button>
+                                <div class="height-15"></div>
+                                <div>
+                                    <a href="#">
+                                        Login issues? Try this link
+                                    </a>
+                                </div>
 
                                 {{--<a class="btn btn-link" href="{{ route('password.request') }}">--}}
                                 {{--Forgot Your Password?--}}
