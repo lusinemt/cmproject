@@ -20,6 +20,9 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+####Advertiser menu#####
+Route::resource('advertiser', 'Advertiser\AdvertiserController')->middleware('auth');
+
 ####Campaign menu#####
 Route::resource('campaign', 'Campaign\CreateCampaignController')->middleware('auth');
 

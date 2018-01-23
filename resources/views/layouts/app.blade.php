@@ -109,7 +109,7 @@
                                        aria-haspopup="true" aria-expanded="false">Advertisers</a>
                                     <ul class="dropdown-menu">
                                         <li><a href="#">List</a></li>
-                                        <li><a href="#">Create New</a></li>
+                                        <li><a href="{{ url('advertiser/create') }}">Create New</a></li>
                                     </ul>
                                 </li>
                                 <li class="dropdown">
