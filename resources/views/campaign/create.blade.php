@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container main-content">
-        <div class="height-35"></div>
+        <div class="height-20"></div>
         <form action="">
             <div class="panel panel-default">
                 <div class="panel-heading">

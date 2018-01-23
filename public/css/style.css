@@ -81,7 +81,15 @@ a:hover, a:active, a:focus {
 .h5{
     font-size: 13px;
 }
-
+.sm-txt{
+    font-size: 12px;
+}
+.green-txt{
+    color: #008000;
+}
+.red-txt{
+    color: #ff0000;
+}
 /*
     Spaces
 */
