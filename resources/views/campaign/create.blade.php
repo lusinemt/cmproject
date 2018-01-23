@@ -306,4 +306,5 @@
             <div class="height-35"></div>
         </form>
     </div>
+    <script src="{{ asset('js/campaigns/campaign.js') }}"></script>
 @endsection
