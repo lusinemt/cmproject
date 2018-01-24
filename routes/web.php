@@ -26,8 +26,13 @@ Route::group(['middleware' => ['auth']], function () {
     Route::resource('advertiser', 'Advertiser\AdvertiserController');
     Route::get('search/advertiser', 'libraries@searchadvertiser');//->middleware('auth');
 
+
 ####Campaign menu#####
     Route::resource('campaign', 'Campaign\CreateCampaignController');
+
+
+####Publisher menu#####
+    Route::resource('publisher', 'Publisher\PublisherController');
 
 });
 
