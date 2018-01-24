@@ -22,9 +22,9 @@ class libraries extends Controller
             }
 
             if ($advertisers) {
-                $output = '<ul>';
+                $output = '<ul class="list-group">';
                 foreach ($advertisers as $key => $product) {
-                    $output .= '<li>' .
+                    $output .= '<li class="list-group-item">' .
                         $product->advertiserid .'. '.$product->advertisername.
                         '</li>';
                 }
