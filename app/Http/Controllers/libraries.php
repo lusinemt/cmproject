@@ -22,13 +22,13 @@ class libraries extends Controller
             }
 
             if ($advertisers) {
-                $output = '<table>';
+                $output = '<ul>';
                 foreach ($advertisers as $key => $product) {
-                    $output .= '<tr>' .
-                        '<td>' . $product->advertiserid .'. '.$product->advertisername. '</td>' .
-                        '</tr>';
+                    $output .= '<li>' .
+                        $product->advertiserid .'. '.$product->advertisername.
+                        '</li>';
                 }
-                $output .= '</table>';
+                $output .= '</ul>';
             }
       //  }
         return Response($output);
