@@ -57,6 +57,74 @@ input:-webkit-autofill:active {
 }
 
 /*
+    Custom checkboxes/radio buttons
+*/
+
+.custom-checkbox label, .gfield_radio li label {
+    text-transform: uppercase;
+    font-weight: 100;
+    padding: 5px 12px;
+    -moz-transition: background 0.3s;
+    -o-transition: background 0.3s;
+    -webkit-transition: background 0.3s;
+    transition: background 0.3s;
+}
+
+.custom-checkbox, .gfield_radio li {
+    display: inline-block;
+    margin-right: 1%;
+}
+.custom-checkbox label, .gfield_radio li label {
+    width: auto;
+    border: 1px #ff780a solid;
+    color: #ff780a;
+    background: #fff;
+    text-align: center;
+    display: block;
+    cursor: pointer;
+    font-size: 12px;
+    border-radius: 3px;
+}
+.custom-checkbox label:hover, .gfield_radio li label:hover {
+    border-color: #ff780a;
+    color: #ff780a;
+}
+.custom-checkbox label:active, .gfield_radio li label:active {
+    border-color: #ff780a;
+    color: #ff780a;
+}
+.custom-checkbox input[type="checkbox"], .gfield_radio li input[type="checkbox"] {
+    display: none;
+}
+.custom-checkbox input[type="checkbox"]:checked + label, .gfield_radio li input[type="checkbox"]:checked + label {
+    background: #ff780a;
+    color: #fff;
+    border-color: #ff780a;
+}
+.custom-checkbox input[type="radio"], .gfield_radio li input[type="radio"] {
+    display: none;
+}
+.custom-checkbox input[type="radio"]:checked ~ label, .gfield_radio li input[type="radio"]:checked ~ label {
+    background: #ff780a;
+    color: #fff;
+    border-color: #ff780a;
+}
+
+.custom-checkbox input[type="radio"], .gfield_radio li input[type="radio"] {
+    display: none;
+}
+.custom-checkbox input[type="radio"]:checked ~ label, .gfield_radio li input[type="radio"]:checked ~ label {
+    background: #ff780a;
+    color: #fff;
+    border-color: #ff780a;
+}
+
+
+/**/
+
+
+
+/*
     Typography
 */
 
@@ -267,6 +335,10 @@ header.platform-header .logged-user-info li ul.dropdown-menu>li>a:hover{
 .home-page-content .flex-content select{
     flex: 2;
 }
+.main-content.create-campaign-page h4{
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
 .main-content .panel{
     margin-bottom: 0;
 }
@@ -280,7 +352,7 @@ header.platform-header .logged-user-info li ul.dropdown-menu>li>a:hover{
 }
 .main-content p.content-title{
     background: #e1e1e1;
-    padding: 10px 0 10px 10px;
+    padding: 8px 0 8px 10px;
     border-radius: 3px;
 }
 
@@ -292,9 +364,18 @@ header.platform-header .logged-user-info li ul.dropdown-menu>li>a:hover{
     flex: 1;
     margin: 0 2px;
 }
+.main-content ul.setup-filters li select{
+    width: 55%;
+}
 .main-content textarea{
     height: 71px;
     resize: vertical;
+}
+.main-content .partner-cpa, .main-content .partner-currency{
+    width: 18%;
+}
+.main-content .custom-checkbox ul li{
+    display: inline-block;
 }
 
 .main-content .mobile-settings .btn{

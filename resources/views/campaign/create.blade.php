@@ -1,9 +1,10 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container main-content">
-        <div class="height-20"></div>
-        <form action="">
+    <div class="container main-content create-campaign-page">
+        <div class="height-5"></div>
+        <form action="/campaign" method="POST">
+            {{ csrf_field() }}
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h4>Setup Info</h4>
@@ -44,7 +45,7 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="height-20">
+                    <div class="height-15">
                         <div class="row">
                             <div class="col-sm-3">
                                 <p class="h5 content-title">Category</p>
@@ -102,12 +103,12 @@
                             <div class="col-sm-5">
                                 <p class="h5 content-title">Partner Rate (default)</p>
                                 <div class="flex-content">
-                                    <select name="partner-currency" class="form-control">
+                                    <select name="partner-currency" class="form-control partner-currency">
                                         <option value="usd" selected>USD</option>
                                         <option value="gbp">GBP</option>
                                         <option value="eur">EUR</option>
                                     </select>
-                                    <input name="partner-cpa" type="number" class="form-control">
+                                    <input name="partner-cpa" type="number" class="form-control partner-cpa">
                                 </div>
                                 <div class="height-10"></div>
                                 <div class="row">
@@ -132,7 +133,6 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="height-20"></div>
                         <div class="row">
                             <div class="col-sm-7">
                                 <p class="h5 content-title">Traffic Quality</p>
@@ -175,18 +175,38 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="height-10"></div>
                         <div class="row">
                             <div class="col-sm-3">
                                 <p class="h5 content-title">Postback placed on ...</p>
-                                <button class="btn crunchie-btn">Default</button>
-                                <button class="btn crunchie-btn">Event</button>
-                                <button class="btn crunchie-btn">Sale</button>
+                                <div class="custom-checkbox">
+                                    <ul>
+                                        <li>
+                                            <input name="Default" type="checkbox" value="Default" id="Default">
+                                            <label for="Default" id="Default">Default</label>
+                                        </li>
+                                        <li>
+                                            <input name="Event" type="checkbox" value="Event" id="Event">
+                                            <label for="Event" id="Event">Event</label>
+                                        </li>
+                                        <li>
+                                            <input name="Sale" type="checkbox" value="Sale" id="Sale">
+                                            <label for="Sale" id="Sale">Sale</label>
+                                        </li>
+                                    </ul>
+                                </div>
                             </div>
                             <div class="col-sm-2">
                                 <p class="h5 content-title">Campaign Type</p>
-                                <button class="btn crunchie-btn">App</button>
-                                <button class="btn crunchie-btn">Web</button>
+                                <ul class="gfield_radio campaign-type-selectors">
+                                    <li>
+                                        <input name="App" type="radio" value="App" id="App" data-campaigntype="app" checked>
+                                        <label for="App" id="App">App</label>
+                                    </li>
+                                    <li>
+                                        <input name="Web" type="radio" value="Web" data-campaigntype="web" id="Web">
+                                        <label for="Web" id="Web">Web</label>
+                                    </li>
+                                </ul>
                             </div>
                             <div class="col-sm-2">
                                 <p class="h5 content-title">Event Attribution Info</p>
@@ -211,8 +231,16 @@
                                 </select>
                             </div>
                             <div class="col-sm-5">
-                                <p class="h5 content-title">Campaign Start/End Date</p>
-                                <input name="datePicker" class="form-control" type="text" id="startDate"/>
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <p class="h5 content-title">Campaign Start Date</p>
+                                        <input class="form-control date-filter" type="text" name="" id="startDate" value="">
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <p class="h5 content-title">Campaign End Date</p>
+                                        <input class="form-control date-filter" type="text" name="" id="endDate" value="">
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <div class="height-10"></div>
@@ -227,7 +255,6 @@
                                 <textarea name="exampleurl" class="form-control"></textarea>
                             </div>
                         </div>
-                        <div class="height-10"></div>
                         <div class="row">
                             <div class="col-sm-6">
                                 <p class="h5 content-title">Publisher Notes</p>
@@ -241,29 +268,73 @@
                     </div>
                 </div>
             </div>
-            <div class="panel panel-default">
+            <div class="panel panel-default mobile-settings">
                 <div class="panel-heading">
                     <h4>Mobile Settings</h4>
                 </div>
-                <div class="panel-body mobile-settings">
+                <div class="panel-body">
                     <div class="row">
                         <div class="col-sm-5">
                             <p class="h5 content-title">Platforms</p>
-                            <button class="btn crunchie-btn">Android</button>
-                            <button class="btn crunchie-btn">IPhone</button>
-                            <button class="btn crunchie-btn">IPad</button>
-                            <button class="btn crunchie-btn">IPod</button>
+                            <div class="custom-checkbox">
+                                <ul>
+                                    <li>
+                                        <input name="Android" type="checkbox" value="Android" id="Android">
+                                        <label for="Android" id="Android">Android</label>
+                                    </li>
+                                    <li>
+                                        <input name="IPhone" type="checkbox" value="IPhone" id="IPhone">
+                                        <label for="IPhone" id="IPhone">IPhone</label>
+                                    </li>
+                                    <li>
+                                        <input name="IPad" type="checkbox" value="IPad" id="IPad">
+                                        <label for="IPad" id="IPad">IPad</label>
+                                    </li>
+                                    <li>
+                                        <input name="IPod" type="checkbox" value="IPod" id="IPod">
+                                        <label for="IPod" id="IPod">IPod</label>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
                         <div class="col-sm-7">
                             <p class="h5 content-title">Device ID List</p>
-                            <button class="btn crunchie-btn">AndroidID</button>
-                            <button class="btn crunchie-btn">AndroidMD5</button>
-                            <button class="btn crunchie-btn">GoogleAdID</button>
-                            <button class="btn crunchie-btn">IDFA</button>
-                            <button class="btn crunchie-btn">IMEI</button>
-                            <button class="btn crunchie-btn">MacAddress</button>
-                            <button class="btn crunchie-btn">ODIN</button>
-                            <button class="btn crunchie-btn">UDID</button>
+                            <div class="custom-checkbox">
+                                <ul>
+                                    <li>
+                                        <input name="AndroidID" type="checkbox" value="AndroidID" id="AndroidID">
+                                        <label for="AndroidID" id="AndroidID">AndroidID</label>
+                                    </li>
+                                    <li>
+                                        <input name="AndroidMD5" type="checkbox" value="AndroidMD5" id="AndroidMD5">
+                                        <label for="AndroidMD5" id="AndroidMD5">AndroidMD5</label>
+                                    </li>
+                                    <li>
+                                        <input name="GoogleAdID" type="checkbox" value="GoogleAdID" id="GoogleAdID">
+                                        <label for="GoogleAdID" id="GoogleAdID">GoogleAdID</label>
+                                    </li>
+                                    <li>
+                                        <input name="IDFA" type="checkbox" value="IDFA" id="IDFA">
+                                        <label for="IDFA" id="AndroidMD5">IDFA</label>
+                                    </li>
+                                    <li>
+                                        <input name="IMEI" type="checkbox" value="IMEI" id="IMEI">
+                                        <label for="IMEI" id="AndroidMD5">IMEI</label>
+                                    </li>
+                                    <li>
+                                        <input name="MacAddress" type="checkbox" value="MacAddress" id="MacAddress">
+                                        <label for="MacAddress" id="MacAddress">MacAddress</label>
+                                    </li>
+                                    <li>
+                                        <input name="ODIN.2" type="checkbox" value="ODIN" id="ODIN">
+                                        <label for="ODIN" id="ODIN">ODIN</label>
+                                    </li>
+                                    <li>
+                                        <input name="UDID" type="checkbox" value="UDID" id="UDID">
+                                        <label for="UDID" id="UDID">UDID</label>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                     <div class="row">
@@ -289,14 +360,14 @@
                 <div class="panel-heading">
                     <h4>Creative</h4>
                 </div>
-                <div class="panel-body mobile-settings">
+                <div class="panel-body">
                     <div class="row">
                         <div class="col-sm-12">
                             <p class="h5 content-title">Offer Title</p>
                             <input name="offertitle" type="text" class="form-control">
                             <div class="height-5"></div>
                             <p class="h5 content-title">Offer Title</p>
-                            <textarea name="offertext" class="form-control">Offer Text</textarea>
+                            <textarea name="offertext" class="form-control"></textarea>
                         </div>
                     </div>
                 </div>
