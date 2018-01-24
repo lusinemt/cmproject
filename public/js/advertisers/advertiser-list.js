@@ -1,3 +1,5 @@
 $(document).ready(function() {
-    $('#advertiserList').DataTable();
+    $('#advertiserList').DataTable({
+        "paging": false
+    });
 } );

@@ -10,11 +10,11 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
-    <!-- Styles -->
-    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('/images/favicon.ico') }}">
-
     <!-- Font Awesome -->
     <link href="{{ asset('css/font-awesome/font-awesome.min.css') }}" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('/images/favicon.ico') }}">
 
     <!-- Bootstrap -->
     <link href="{{ asset('css/bootstrap.css') }}" rel="stylesheet">
@@ -99,6 +99,7 @@
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
                                        aria-haspopup="true" aria-expanded="false">Publishers</a>
                                     <ul class="dropdown-menu">
+                                        <li><a href="{{ url('/publisher') }}">List</a></li>
                                         <li><a href="#">Create New</a></li>
                                         <li><a href="#">Placement Stats</a></li>
                                         <li><a href="#">Missing Placements</a></li>

@@ -63,33 +63,33 @@
                         </tr>
                         </thead>
                         <tbody>
-                        @foreach($objAllAdvertisers as $advertiser)
-                            <tr>
-                                <td>{{ $advertiser->advertiserid }}</td>
-                                <td>{{ $advertiser->advertisername }}</td>
-                                <td>{{ $advertiser->accountmanagerid }}</td>
-                                <td>{{ $advertiser->username }}<br>{{ $advertiser->rawpassword }}</td>
-                                <td></td>
-                                <td></td>
-                                <td>
-                                    <span class="glyphicon glyphicon-ok green-txt mr-3" aria-hidden="true"></span> Yes
-                                </td>
-                                <td>
-                                    <span class="glyphicon glyphicon-remove red-txt mr-3" aria-hidden="true"></span> No
-                                </td>
-                                <td></td>
-                                <td>
-                                    <p class="ip-list-container">
-                                        @if(!empty($advertiser->postbackipwhitelist ))
-                                            <span class="glyphicon glyphicon-ok green-txt mr-3" aria-hidden="true"></span>
-                                            {{ $advertiser->postbackipwhitelist }}
-                                            @else <span class="glyphicon glyphicon-remove red-txt mr-3" aria-hidden="true"></span> none
-                                        @endif
-                                    </p>
-                                </td>
-                                <td>{{ $advertiser->paymentmethod }}</td>
-                                <td class="text-center"><span class="glyphicon glyphicon-pencil edit-btn" aria-hidden="true"></span></td>
-                            </tr>
+                        @foreach($objAllPublishers as $publisher)
+                            {{--<tr>--}}
+                                {{--<td>{{ $advertiser->advertiserid }}</td>--}}
+                                {{--<td>{{ $advertiser->advertisername }}</td>--}}
+                                {{--<td>{{ $advertiser->accountmanagerid }}</td>--}}
+                                {{--<td>{{ $advertiser->username }}<br>{{ $advertiser->rawpassword }}</td>--}}
+                                {{--<td></td>--}}
+                                {{--<td></td>--}}
+                                {{--<td>--}}
+                                    {{--<span class="glyphicon glyphicon-ok green-txt mr-3" aria-hidden="true"></span> Yes--}}
+                                {{--</td>--}}
+                                {{--<td>--}}
+                                    {{--<span class="glyphicon glyphicon-remove red-txt mr-3" aria-hidden="true"></span> No--}}
+                                {{--</td>--}}
+                                {{--<td></td>--}}
+                                {{--<td>--}}
+                                    {{--<p class="ip-list-container">--}}
+                                        {{--@if(!empty($advertiser->postbackipwhitelist ))--}}
+                                            {{--<span class="glyphicon glyphicon-ok green-txt mr-3" aria-hidden="true"></span>--}}
+                                            {{--{{ $advertiser->postbackipwhitelist }}--}}
+                                        {{--@else <span class="glyphicon glyphicon-remove red-txt mr-3" aria-hidden="true"></span> none--}}
+                                        {{--@endif--}}
+                                    {{--</p>--}}
+                                {{--</td>--}}
+                                {{--<td>{{ $advertiser->paymentmethod }}</td>--}}
+                                {{--<td class="text-center"><span class="glyphicon glyphicon-pencil edit-btn" aria-hidden="true"></span></td>--}}
+                            {{--</tr>--}}
                         @endforeach
                         </tbody>
                     </table>

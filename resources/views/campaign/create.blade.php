@@ -11,9 +11,10 @@
                 </div>
                 <div class="panel-body">
                     <div class="row">
-                        <div class="col-sm-2">
+                        <div class="col-sm-2 client-filter">
                             <p class="h5 content-title">Client</p>
-                            <input type="text" name="advertiser" class="form-control" placeholder="Filter by client">
+                            <input type="text" name="advertiser" class="form-control advertiser-field" placeholder="Filter by client">
+                            <div class="filtered-data"></div>
                         </div>
                         <div class="col-sm-5">
                             <p class="h5 content-title">Offer</p>

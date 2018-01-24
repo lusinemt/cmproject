@@ -226,6 +226,29 @@ a:hover, a:active, a:focus {
 }
 
 /*
+    Custom Loader
+*/
+
+.loader {
+    -webkit-animation: spin 1s linear infinite;
+    animation: spin 1s linear infinite;
+    border: 3px solid #ddd;
+    border-top: 3px solid #42a5f5;
+    border-radius: 50%;
+    height: 35px;
+    width: 35px;
+}
+
+@-webkit-keyframes spin {
+    to {
+        border-top-color: #ec407a;
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+/**/
+/*
     Main Styles
 */
 
@@ -335,9 +358,13 @@ header.platform-header .logged-user-info li ul.dropdown-menu>li>a:hover{
 .home-page-content .flex-content select{
     flex: 2;
 }
-.main-content.create-campaign-page h4{
+.main-content.create-campaign-page h4, .main-content.advertisers-list h4{
     margin-top: 1px;
     margin-bottom: 1px;
+}
+.main-content.create-campaign-page .client-filter .filtered-data .list-group-item{
+    padding: 5px 15px;
+    cursor: pointer;
 }
 .main-content .panel{
     margin-bottom: 0;
@@ -386,8 +413,18 @@ header.platform-header .logged-user-info li ul.dropdown-menu>li>a:hover{
     Advertisers List Page Styles
 */
 
-.main-content.advertisers-list table.table-bordered.dataTable th{
+.main-content.advertisers-list table.table-bordered.dataTable th,
+.main-content.advertisers-list table.table-bordered.dataTable td{
     font-size: 11px;
+}
+.main-content.advertisers-list table.table-bordered.dataTable p.ip-list-container{
+    padding-top: 3px;
+    height: 35px;
+    overflow-y: scroll;
+}
+.main-content.advertisers-list table.table-bordered.dataTable .edit-btn{
+    color: #ff780a;
+    cursor: pointer;
 }
 .main-content.advertisers-list .list-filters{
     padding: 5px;
