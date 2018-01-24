@@ -14,11 +14,11 @@ class libraries extends Controller
 
             if(is_numeric($request->search))
             {
-                $advertisers = DB::table('advertiser')->where('advertiserid', 'LIKE', '%' . $request->search . "%")->get();
+                $advertisers = DB::table('advertiser')->WhereRaw("advertiserid::TEXT ILIKE '%". $request->search ."%'")->get();
             }
             else
             {
-                $advertisers = DB::table('advertiser')->where('advertisername', 'LIKE', '%' . $request->search . "%")->get();
+                $advertisers = DB::table('advertiser')->Where('advertisername', 'ILIKE', '%' . $request->search . "%")->get();
             }
 
             if ($advertisers) {
