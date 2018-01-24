@@ -1,23 +1,26 @@
 <?php
 
-namespace App\Http\Controllers\Advertiser;
+namespace App\Http\Controllers\Publisher;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Advertiser\AdvertiserModel;
+use App\Publisher\PublisherModel;
 
-class AdvertiserController extends Controller
+class PublisherController extends Controller
 {
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function __construct()
     {
-        $this->objAdvertiser = new AdvertiserModel;
+        $this->objPublisher = new PublisherModel;
     }
-
     public function index()
     {
-        $objAllAdvertisers = $this->objAdvertiser->all();
-        dd($objAllAdvertisers);
-        return view('advertiser.list', compact('objAllAdvertisers'));
+        $objAllPublishers = $this->objPublisher->all();
+        return view('publisher.list', compact('objAllPublishers'));
     }
 
     /**
@@ -27,7 +30,7 @@ class AdvertiserController extends Controller
      */
     public function create()
     {
-        return view('advertiser.create');
+        //
     }
 
     /**
@@ -85,5 +88,4 @@ class AdvertiserController extends Controller
     {
         //
     }
-
 }
