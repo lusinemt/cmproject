@@ -4,12 +4,19 @@ namespace App\Http\Controllers\Advertiser;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Advertiser\AdvertiserModel;
 
 class AdvertiserController extends Controller
 {
+    public function __construct()
+    {
+        $this->objAdvertiser = new AdvertiserModel;
+    }
+
     public function index()
     {
-
+        $objAllAdvertisers = $this->objAdvertiser->all();
+        return view('advertiser.list', compact('objAllAdvertisers'));
     }
 
     /**
