@@ -108,7 +108,7 @@
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
                                        aria-haspopup="true" aria-expanded="false">Advertisers</a>
                                     <ul class="dropdown-menu">
-                                        <li><a href="#">List</a></li>
+                                        <li><a href="{{ url('advertiser') }}">List</a></li>
                                         <li><a href="{{ url('advertiser/create') }}">Create New</a></li>
                                     </ul>
                                 </li>
