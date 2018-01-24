@@ -421,6 +421,7 @@ header.platform-header .logged-user-info li ul.dropdown-menu>li>a:hover{
     padding-top: 3px;
     height: 35px;
     overflow-y: scroll;
+    word-break: break-all;
 }
 .main-content.advertisers-list table.table-bordered.dataTable .edit-btn{
     color: #ff780a;
@@ -436,6 +437,132 @@ header.platform-header .logged-user-info li ul.dropdown-menu>li>a:hover{
     margin: 0 3px;
     padding: 5px 15px;
 }
+/**/
+
+/*
+    Publishers List Page Styles
+*/
+
+.main-content.publishers-list .partner-setup-links .partner-setup li{
+    display: inline-block;
+    margin-right: 15px;
+    -webkit-box-shadow: 0 0 5px 1px rgba(225,225,225,1);
+    -moz-box-shadow: 0 0 5px 1px rgba(225,225,225,1);
+    box-shadow: 0 0 5px 1px rgba(225,225,225,1);
+    padding: 6px 15px 9px 15px;
+}
+.css3-tabstrip
+{
+    width: 100%;
+    height: 220px;
+}
+
+.css3-tabstrip ul,
+.css3-tabstrip li
+{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.css3-tabstrip,
+.css3-tabstrip input[type="radio"]:checked + label
+{
+    position: relative;
+}
+
+.css3-tabstrip li,
+.css3-tabstrip input[type="radio"] + label
+{
+    display: inline-block;
+}
+
+.css3-tabstrip li > div,
+.css3-tabstrip input[type="radio"]
+{
+    position: absolute;
+}
+
+.css3-tabstrip li > div,
+.css3-tabstrip input[type="radio"] + label
+{
+    border: solid 1px #ccc;
+}
+
+.css3-tabstrip
+{
+    font: normal 11px Arial, Sans-serif;
+    color: #404040;
+}
+
+.css3-tabstrip li
+{
+    vertical-align: top;
+}
+
+.css3-tabstrip li:first-child
+{
+    margin-left: 8px;
+}
+
+.css3-tabstrip li > div
+{
+    top: 33px;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 8px;
+    overflow: auto;
+    background: #fff;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.css3-tabstrip input[type="radio"] + label
+{
+    margin: 0 2px 0 0;
+    padding: 0 18px;
+    line-height: 32px;
+    background: #f1f1f1;
+    text-align: center;
+    border-radius: 5px 5px 0 0;
+    cursor: pointer;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+.css3-tabstrip input[type="radio"]:checked + label
+{
+    z-index: 1;
+    background: #fff;
+    border-bottom-color: #fff;
+    cursor: default;
+}
+
+.css3-tabstrip input[type="radio"]
+{
+    opacity: 0;
+}
+
+.css3-tabstrip input[type="radio"] ~ div
+{
+    display: none;
+}
+
+.css3-tabstrip input[type="radio"]:checked:not(:disabled) ~ div
+{
+    display: block;
+}
+
+.css3-tabstrip input[type="radio"]:disabled + label
+{
+    opacity: .5;
+    cursor: no-drop;
+}
+
+
 /**/
 
 /**/
