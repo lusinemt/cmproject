@@ -336,8 +336,8 @@ header.platform-header .logged-user-info li ul.dropdown-menu>li>a:hover{
     flex: 2;
 }
 .main-content.create-campaign-page h4{
-    margin-top: 5px;
-    margin-bottom: 5px;
+    margin-top: 1px;
+    margin-bottom: 1px;
 }
 .main-content .panel{
     margin-bottom: 0;
@@ -381,5 +381,24 @@ header.platform-header .logged-user-info li ul.dropdown-menu>li>a:hover{
 .main-content .mobile-settings .btn{
     margin: 0 5px 10px 0;
 }
+
+/*
+    Advertisers List Page Styles
+*/
+
+.main-content.advertisers-list table.table-bordered.dataTable th{
+    font-size: 11px;
+}
+.main-content.advertisers-list .list-filters{
+    padding: 5px;
+}
+.main-content.advertisers-list .list-filters ul li{
+    margin: 5px 0;
+}
+.main-content.advertisers-list .list-filters ul li .btn{
+    margin: 0 3px;
+    padding: 5px 15px;
+}
+/**/
 
 /**/

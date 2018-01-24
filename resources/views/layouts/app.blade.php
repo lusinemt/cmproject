@@ -27,6 +27,11 @@
     <script src="{{ asset('js/plugins/Daterangepicker/daterangepicker.js')  }}"></script>
     <link rel="stylesheet"  href="{{ asset('css/plugins/Daterangepicker/daterangepicker.css')  }}">
 
+    <!-- Data Tables -->
+    <script src="{{ asset('js/plugins/Datatables/jquery.dataTables.min.js')  }}"></script>
+    <script src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap4.min.js"></script>
+    <link rel="stylesheet"  href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap4.min.css">
+
     <!-- Main Styles -->
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
 </head>
