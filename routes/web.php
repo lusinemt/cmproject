@@ -20,10 +20,15 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+
+Route::group(['middleware' => ['auth']], function () {
 ####Advertiser menu#####
-Route::resource('advertiser', 'Advertiser\AdvertiserController')->middleware('auth');
+    Route::resource('advertiser', 'Advertiser\AdvertiserController');
+    Route::get('search/advertiser', 'libraries@searchadvertiser');//->middleware('auth');
 
 ####Campaign menu#####
-Route::resource('campaign', 'Campaign\CreateCampaignController')->middleware('auth');
+    Route::resource('campaign', 'Campaign\CreateCampaignController');
+
+});
 
 
