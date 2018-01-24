@@ -16,7 +16,7 @@ class AdvertiserController extends Controller
     public function index()
     {
         $objAllAdvertisers = $this->objAdvertiser->all();
-        dd($objAllAdvertisers);
+      //  dd($objAllAdvertisers);
         return view('advertiser.list', compact('objAllAdvertisers'));
     }
 
