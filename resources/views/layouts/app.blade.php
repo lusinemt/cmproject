@@ -100,7 +100,7 @@
                                        aria-haspopup="true" aria-expanded="false">Publishers</a>
                                     <ul class="dropdown-menu">
                                         <li><a href="{{ url('/publisher') }}">List</a></li>
-                                        <li><a href="#">Create New</a></li>
+                                        <li><a href="{{ url('publisher/create') }}">Create New</a></li>
                                         <li><a href="#">Placement Stats</a></li>
                                         <li><a href="#">Missing Placements</a></li>
                                         <li><a href="#">API Request Log</a></li>

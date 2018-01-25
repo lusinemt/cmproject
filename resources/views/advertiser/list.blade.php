@@ -68,7 +68,7 @@
                                 <td>{{ $advertiser->advertiserid }}</td>
                                 <td>{{ $advertiser->advertisername }}</td>
                                 <td>{{ $advertiser->accountmanagerid }}</td>
-                                <td>{{ $advertiser->username }}<br>{{ $advertiser->rawpassword }}</td>
+                                <td>{{ $advertiser->username }}/{{ $advertiser->rawpassword }}</td>
                                 <td></td>
                                 <td></td>
                                 <td>

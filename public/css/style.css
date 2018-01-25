@@ -361,7 +361,7 @@ header.platform-header .logged-user-info li ul.dropdown-menu>li>a:hover{
 .home-page-content .flex-content select{
     flex: 2;
 }
-.main-content.create-campaign-page h4, .main-content.advertisers-list h4{
+.main-content h4, .main-content.advertisers-list h4, .main-content h4.light-title{
     margin-top: 1px;
     margin-bottom: 1px;
 }
@@ -443,7 +443,7 @@ header.platform-header .logged-user-info li ul.dropdown-menu>li>a:hover{
 /**/
 
 /*
-    Publishers List Page Styles
+    Publishers Section Styles
 */
 
 .main-content.publishers-list .partner-setup-links .partner-setup li,
@@ -490,6 +490,24 @@ header.platform-header .logged-user-info li ul.dropdown-menu>li>a:hover{
 }
 .main-content.publishers-list #passivePartners .options-inline-list-container ul li:last-child{
     border: none;
+}
+.main-content.publisher-create .sm-content .list-group{
+    height: 210px;
+    overflow-y: scroll;
+}
+.main-content.publisher-create .sm-content .list-group .list-group-item{
+    padding: 5px 15px;
+    font-size: 13px;
+}
+.main-content.publisher-create .global-postback span{
+    margin-top: 5px;
+}
+.main-content.publisher-create .global-postback select{
+    flex-basis: 10%;
+}
+.main-content.publisher-create #goToEdit{
+    margin-top: 10px;
+    margin-left: 5px;
 }
 /**/
 
