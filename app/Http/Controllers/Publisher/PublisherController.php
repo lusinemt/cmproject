@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Publisher;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Publisher\PublisherModel;
+use App\Publishers\Publisher;
 
 class PublisherController extends Controller
 {
@@ -15,8 +15,9 @@ class PublisherController extends Controller
      */
     public function __construct()
     {
-        $this->objPublisher = new PublisherModel;
+        $this->objPublisher = new Publisher;
     }
+
     public function index()
     {
         $objAllPublishers = $this->objPublisher->all();
@@ -30,7 +31,7 @@ class PublisherController extends Controller
      */
     public function create()
     {
-        //
+        return view('advertiser.create');
     }
 
     /**
@@ -88,4 +89,20 @@ class PublisherController extends Controller
     {
         //
     }
+
+    public function PlacementStats()
+    {
+        return view('publisher.placementstats');
+    }
+
+    public function PlacementMissing()
+    {
+        return view('publisher.placementMissing');
+    }
+
+    public function ApiRequestLog()
+    {
+        return view('publisher.placementMissing');
+    }
+
 }
