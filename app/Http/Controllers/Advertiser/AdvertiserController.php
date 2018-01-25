@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Advertiser;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Advertisers\Advertiser;
+use App\AccountManager;
 
 class AdvertiserController extends Controller
 {
@@ -15,8 +16,9 @@ class AdvertiserController extends Controller
 
     public function index()
     {
-        $objAllAdvertisers = $this->objAdvertiser->all();
-      //  dd($objAllAdvertisers);
+        $objAllAdvertisers = Advertiser::with('account')->get();
+        $objAccounts = AccountManager::all();
+        $objAllAdvertisers->allManangers = $objAccounts;
         return view('advertiser.list', compact('objAllAdvertisers'));
     }
 
@@ -38,7 +40,10 @@ class AdvertiserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate(request(),[
+
+            ]
+        );
     }
 
     /**
@@ -49,7 +54,8 @@ class AdvertiserController extends Controller
      */
     public function show($id)
     {
-        //
+        $data = $this->objAdvertiser->find($id);
+        return view('advertiser.create', ['data' => $data]);
     }
 
     /**
