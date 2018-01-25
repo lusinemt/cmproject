@@ -1,10 +1,11 @@
 <?php
 
-namespace App\Publisher;
+namespace App\Publishers;
 
 use Illuminate\Database\Eloquent\Model;
 
-class PublisherModel extends Model
+class Publisher extends Model
 {
     protected $table = 'publisher';
+    protected $primaryKey = 'publisherid';
 }
