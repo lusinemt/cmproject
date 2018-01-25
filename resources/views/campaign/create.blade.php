@@ -248,7 +248,7 @@
                         <div class="row">
                             <div class="col-sm-6 url-content">
                                 <p class="h5 content-title">Default Advertiser URL</p>
-                                <textarea name="url" class="form-control"></textarea>
+                                <textarea name="url" class="form-control" required></textarea>
                                 <p><a href="#">Placeholder Reference</a></p>
                             </div>
                             <div class="col-sm-6 url-content">
@@ -365,7 +365,7 @@
                     <div class="row">
                         <div class="col-sm-12">
                             <p class="h5 content-title">Offer Title</p>
-                            <input name="offertitle" type="text" class="form-control">
+                            <input name="offertitle" type="text" class="form-control" required>
                             <div class="height-5"></div>
                             <p class="h5 content-title">Offer Title</p>
                             <textarea name="offertext" class="form-control"></textarea>

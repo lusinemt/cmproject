@@ -1,101 +1,148 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container main-content advertisers-list">
+    <div class="container main-content publishers-list">
         <div class="height-5"></div>
         <div class="panel panel-default">
-            <div class="panel-heading">
-                <div class="row">
-                    <div class="col-sm-9">
-                        <h4>Advertisers</h4>
-                    </div>
-                    <div class="col-sm-3 text-right">
-                        <a class="pull-right" href="http://main-platform.loc/advertiser/create">
-                            Create New Advertise
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="list-filters">
-                <ul>
+            <div class="height-20"></div>
+            <div class="partner-setup-links pull-right">
+                <ul class="partner-setup">
                     <li>
-                        <span>Traffic Quality: </span>
-                        <button class="btn crunchie-btn">All</button>
-                        <button class="btn crunchie-btn">1 - Poor</button>
-                        <button class="btn crunchie-btn">2 - Low</button>
-                        <button class="btn crunchie-btn">3 - Medium</button>
-                        <button class="btn crunchie-btn">4 - Good</button>
-                        <button class="btn crunchie-btn">5 - Excellent</button>
-                        <button class="btn crunchie-btn">Custom Inclusion Only</button>
+                        <a href="#">Create New Partner</a>
                     </li>
                     <li>
-                        <span>Account Manager:</span>
-                        <button class="btn crunchie-btn">All</button>
-                        <button class="btn crunchie-btn">Alex</button>
-                        <button class="btn crunchie-btn">Andy</button>
-                        <button class="btn crunchie-btn">Gayane</button>
-                        <button class="btn crunchie-btn">Lusine</button>
-                        <button class="btn crunchie-btn">Darreb</button>
-                        <button class="btn crunchie-btn">Gohar</button>
-                        <button class="btn crunchie-btn">Vaz</button>
-                        <button class="btn crunchie-btn">Tommer</button>
-                        <button class="btn crunchie-btn">Mauro</button>
+                        <a href="#">Export Current View</a>
                     </li>
                 </ul>
             </div>
-            <div class="">
-                <div class="table-responsive">
-                    <table id="advertiserList" class="table table-striped table-bordered" cellspacing="0" width="100%">
-                        <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>Name</th>
-                            <th>Account Manager</th>
-                            <th>Username Paasword</th>
-                            <th>Traffic Quality</th>
-                            <th>Allowed Toekens</th>
-                            <th>Cookie Tracking</th>
-                            <th>Unique ConversationIP</th>
-                            <th>IP Dupe Level</th>
-                            <th>IP Whitelist</th>
-                            <th>Payment Method</th>
-                            <th>options</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        @foreach($objAllPublishers as $publisher)
-                            {{--<tr>--}}
-                                {{--<td>{{ $advertiser->advertiserid }}</td>--}}
-                                {{--<td>{{ $advertiser->advertisername }}</td>--}}
-                                {{--<td>{{ $advertiser->accountmanagerid }}</td>--}}
-                                {{--<td>{{ $advertiser->username }}<br>{{ $advertiser->rawpassword }}</td>--}}
-                                {{--<td></td>--}}
-                                {{--<td></td>--}}
-                                {{--<td>--}}
-                                    {{--<span class="glyphicon glyphicon-ok green-txt mr-3" aria-hidden="true"></span> Yes--}}
-                                {{--</td>--}}
-                                {{--<td>--}}
-                                    {{--<span class="glyphicon glyphicon-remove red-txt mr-3" aria-hidden="true"></span> No--}}
-                                {{--</td>--}}
-                                {{--<td></td>--}}
-                                {{--<td>--}}
-                                    {{--<p class="ip-list-container">--}}
-                                        {{--@if(!empty($advertiser->postbackipwhitelist ))--}}
-                                            {{--<span class="glyphicon glyphicon-ok green-txt mr-3" aria-hidden="true"></span>--}}
-                                            {{--{{ $advertiser->postbackipwhitelist }}--}}
-                                        {{--@else <span class="glyphicon glyphicon-remove red-txt mr-3" aria-hidden="true"></span> none--}}
-                                        {{--@endif--}}
-                                    {{--</p>--}}
-                                {{--</td>--}}
-                                {{--<td>{{ $advertiser->paymentmethod }}</td>--}}
-                                {{--<td class="text-center"><span class="glyphicon glyphicon-pencil edit-btn" aria-hidden="true"></span></td>--}}
-                            {{--</tr>--}}
-                        @endforeach
-                        </tbody>
-                    </table>
+            <div class="height-20"></div>
+            <div class="tabs">
+                <ul class="tab-links">
+                    <li class="active" data-partner="active">
+                        <a href="#">Active Partners</a>
+                    </li>
+                    <li data-partner="passive">
+                        <a href="#">De - Activated</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="info-tabs">
+                <div class="active-partners">
+                    <div class="row light-grey-bg no-margin">
+                        <div class="col-sm-8">
+                            <p class="h5 content-title">Active Partners</p>
+                        </div>
+                        <div class="col-sm-4 text-right">
+                            <div class="am-info">
+                                <ul>
+                                    <li>
+                                        <span>Account Manager: </span>
+                                    </li>
+                                    <li>
+                                        <select name="" class="form-control">
+                                            <option value="1">Gohar/Unassigned only</option>
+                                            <option value="2">All</option>
+                                        </select>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="height-5"></div>
+                    <div class="table-responsive">
+                        <table id="activePartners" class="table table-striped table-bordered" cellspacing="0"
+                               width="100%">
+                            <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>AM</th>
+                                <th>Username</th>
+                                <th>Password</th>
+                                <th>Hash/API</th>
+                                <th>Quality</th>
+                                <th>Login</th>
+                                <th>Options</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            @foreach($objAllPublishers as $publisher)
+                                <tr>
+                                    <td>{{ $publisher->publisherid }}</td>
+                                    <td>{{ $publisher->publishername }}</td>
+                                    <td>AM</td>
+                                    <td>{{ $publisher->username }}</td>
+                                    <td>{{ $publisher->password }}</td>
+                                    <td>{{ $publisher->publisherhash }}</td>
+                                    <td>Quality</td>
+                                    <td>Login</td>
+                                    <td class="options-list-container">
+                                        <p>
+                                            click for options
+                                        </p>
+                                    </td>
+                                </tr>
+                            @endforeach
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div  class="passive-partners">
+                    <div class="row light-grey-bg no-margin">
+                        <div class="col-xs-12">
+                            <p class="h5 content-title">De-Activated Partners</p>
+                        </div>
+                    </div>
+                    <div class="height-5"></div>
+                    <div class="table-responsive">
+                        <table id="passivePartners" class="table table-striped table-bordered" cellspacing="0"
+                               width="100%">
+                            <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>AM</th>
+                                <th>Username</th>
+                                <th>Password</th>
+                                <th>Hash/API</th>
+                                <th>Quality</th>
+                                <th>Options</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            @foreach($objAllPublishers as $publisher)
+                                <tr>
+                                    <td>{{ $publisher->publisherid }}</td>
+                                    <td>{{ $publisher->publishername }}</td>
+                                    <td>AM</td>
+                                    <td>{{ $publisher->username }}</td>
+                                    <td>{{ $publisher->password }}</td>
+                                    <td>{{ $publisher->publisherhash }}</td>
+                                    <td>Quality</td>
+                                    <td class="options-inline-list-container">
+                                        <ul>
+                                            <li>
+                                                <a href="#">view</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">application</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">activate</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">delete</a>
+                                            </li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                            @endforeach
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-    <script src="{{ asset('js/advertisers/advertiser-list.js') }}"></script>
+    <script src="{{ asset('js/publishers/publishers-list.js') }}"></script>
 @endsection
