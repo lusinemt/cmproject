@@ -32,7 +32,10 @@ Route::group(['middleware' => ['auth']], function () {
 
 
 ####Publisher menu#####
+    Route::get('publisher/placementStats', 'Publisher\PublisherController@PlacementStats');
+    Route::get('publisher/placementMissing', 'Publisher\PublisherController@PlacementMissing');
     Route::resource('publisher', 'Publisher\PublisherController');
+
 
 });
 
