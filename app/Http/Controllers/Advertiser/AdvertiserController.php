@@ -4,13 +4,13 @@ namespace App\Http\Controllers\Advertiser;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Advertiser\AdvertiserModel;
+use App\Advertisers\Advertiser;
 
 class AdvertiserController extends Controller
 {
     public function __construct()
     {
-        $this->objAdvertiser = new AdvertiserModel;
+        $this->objAdvertiser = new Advertiser;
     }
 
     public function index()
