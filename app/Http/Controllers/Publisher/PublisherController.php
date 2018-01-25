@@ -31,7 +31,7 @@ class PublisherController extends Controller
      */
     public function create()
     {
-        return view('advertiser.create');
+        return view('publisher.create');
     }
 
     /**
