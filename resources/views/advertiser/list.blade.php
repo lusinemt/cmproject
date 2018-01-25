@@ -67,6 +67,7 @@
                             <tr>
                                 <td>{{ $advertiser->advertiserid }}</td>
                                 <td>{{ $advertiser->advertisername }}</td>
+                                <td>{{ $advertiser->account->managername }}</td>
                                 <td>{{ $advertiser->accountmanagerid }}</td>
                                 <td>{{ $advertiser->username }}/{{ $advertiser->rawpassword }}</td>
                                 <td></td>

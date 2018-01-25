@@ -101,8 +101,8 @@
                                     <ul class="dropdown-menu">
                                         <li><a href="{{ url('/publisher') }}">List</a></li>
                                         <li><a href="{{ url('publisher/create') }}">Create New</a></li>
-                                        <li><a href="#">Placement Stats</a></li>
-                                        <li><a href="#">Missing Placements</a></li>
+                                        <li><a href="{{ url('publisher/placementStats') }}">Placement Stats</a></li>
+                                        <li><a href="{{ url('publisher/placementMissing') }}">Missing Placements</a></li>
                                         <li><a href="#">API Request Log</a></li>
                                         <li><a href="#">Contacts Review</a></li>
                                         <li><a href="#">Messages</a></li>
