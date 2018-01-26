@@ -372,6 +372,10 @@ header.platform-header .logged-user-info li ul.dropdown-menu>li>a:hover{
 .main-content .panel{
     margin-bottom: 0;
 }
+.main-content .xs-div{
+    width: 25%;
+}
+
 .main-content .panel-default>.panel-heading {
     color: #fff;
     background-color: #3f4b56;
@@ -509,6 +513,33 @@ header.platform-header .logged-user-info li ul.dropdown-menu>li>a:hover{
     margin-top: 10px;
     margin-left: 5px;
 }
+
+.main-content.publisher-placementstats .sm-div{
+    width: 50%;
+}
+.main-content.publisher-placementstats .filters{
+    padding-left: 15px;
+}
+.main-content.publisher-placementstats .sm-div input, .main-content.publisher-placementstats .sm-div a{
+    flex: 1;
+}
+.main-content.publisher-placementstats .sm-div a{
+    -webkit-box-shadow: 0 0 5px 1px rgba(225,225,225,1);
+    -moz-box-shadow: 0 0 5px 1px rgba(225,225,225,1);
+    box-shadow: 0 0 5px 1px rgba(225,225,225,1);
+    padding: 6px 15px 0 15px;
+    border-radius: 3px;
+}
+.main-content.publisher-placementstats .table-responsive .dataTables_filter label{
+    display: none;
+}
+.main-content.publisher-placementmissing .range-picker{
+    margin-left: 15px;
+}
+.main-content.publisher-placementmissing table.table-bordered.dataTable th{
+    font-size: 12px;
+}
+
 /**/
 
 /**/
