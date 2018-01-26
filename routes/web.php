@@ -37,6 +37,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('campaign/scrubs', 'Campaign\CampaignController@Scrubs');
     Route::get('campaign/systemChanges', 'Campaign\CampaignController@SystemChanges');
 
+     Route::resource('campaign', 'Campaign\CreateCampaignController');
 
 ####Publisher menu#####
     Route::get('publisher/placementStats', 'Publisher\PublisherController@PlacementStats');
