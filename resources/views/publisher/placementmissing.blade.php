@@ -13,13 +13,13 @@
                 <thead>
                 <tr>
                     <th>PartnerID</th>
-                    <th>Partner</th>
-                    <th>Clicks</th>
-                    <th>Unique</th>
-                    <th>Installs</th>
-                    <th>Revenue</th>
-                    <th>Profit</th>
-                    <th>RPC</th>
+                    <th>Name</th>
+                    <th>Campaigns missing placement</th>
+                    <th>Campaigns with placements</th>
+                    <th>Clicks no placement</th>
+                    <th>Clicks with placement</th>
+                    <th>Unique Campaign</th>
+                    <th>Total Clicks</th>
                     <th>Sales</th>
                     <th>AppEvents</th>
                     <th>AppRevenue</th>
@@ -33,18 +33,6 @@
                 {{--@foreach($objAllPublishers as $publisher)--}}
                 {{--<tr>--}}
                 {{--<td>{{ $publisher->publisherid }}</td>--}}
-                {{--<td>{{ $publisher->publishername }}</td>--}}
-                {{--<td>AM</td>--}}
-                {{--<td>{{ $publisher->username }}</td>--}}
-                {{--<td>{{ $publisher->password }}</td>--}}
-                {{--<td>{{ $publisher->publisherhash }}</td>--}}
-                {{--<td>Quality</td>--}}
-                {{--<td>Login</td>--}}
-                {{--<td class="options-list-container">--}}
-                {{--<p>--}}
-                {{--click for options--}}
-                {{--</p>--}}
-                {{--</td>--}}
                 {{--</tr>--}}
                 {{--@endforeach--}}
                 </tbody>

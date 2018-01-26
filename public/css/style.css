@@ -536,6 +536,9 @@ header.platform-header .logged-user-info li ul.dropdown-menu>li>a:hover{
 .main-content.publisher-placementmissing .range-picker{
     margin-left: 15px;
 }
+.main-content.publisher-placementmissing table.table-bordered.dataTable th{
+    font-size: 12px;
+}
 
 /**/
 
