@@ -84,7 +84,7 @@
                                 </li>
                                 <li class="dropdown">
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
-                                       aria-haspopup="true" aria-expanded="false">Traffic</a>
+                                       aria-haspopup="true" aria-expanded="false">Traffics</a>
                                     <ul class="dropdown-menu">
                                         <li><a href="#">Statistics</a></li>
                                         <li><a href="#">Hourly</a></li>
