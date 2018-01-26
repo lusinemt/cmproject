@@ -28,7 +28,14 @@ Route::group(['middleware' => ['auth']], function () {
 
 
 ####Campaign menu#####
-    Route::resource('campaign', 'Campaign\CreateCampaignController');
+    Route::get('campaign/crunchiePixels', 'Campaign\CampaignController@CrunchiePixels');
+    Route::get('campaign/generateLink', 'Campaign\CampaignController@GenerateLinks');
+    Route::get('campaign/invoiceManage', 'Campaign\CampaignController@InvoicingManage');
+    Route::get('campaign/invoiceView', 'Campaign\CampaignController@InvoicingView');
+    Route::get('campaign/list', 'Campaign\CampaignController@CampaignList');
+    Route::get('campaign/testLink', 'Campaign\CampaignController@TestPartnerLink');
+    Route::get('campaign/scrubs', 'Campaign\CampaignController@Scrubs');
+    Route::get('campaign/systemChanges', 'Campaign\CampaignController@SystemChanges');
 
 
 ####Publisher menu#####
