@@ -64,7 +64,7 @@
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
                                        aria-haspopup="true" aria-expanded="false">Campaigns</a>
                                     <ul class="dropdown-menu">
-                                        <li><a href="#">Network Campaigns</a></li>
+                                        <li><a href="{{ url('campaign/list') }}">Network Campaigns</a></li>
                                         <li><a href="#">Vault Campaigns</a></li>
                                         <li><a href="#">External Campaigns</a></li>
                                         <li><a href="{{ url('campaign/create') }}">Create Campaign</a></li>

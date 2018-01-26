@@ -122,8 +122,6 @@ input:-webkit-autofill:active {
 
 /**/
 
-
-
 /*
     Typography
 */
@@ -451,7 +449,7 @@ header.platform-header .logged-user-info li ul.dropdown-menu>li>a:hover{
 */
 
 .main-content.publishers-list .partner-setup-links .partner-setup li,
-.main-content.publishers-list .tabs .tab-links li{
+.main-content.publishers-list .tabs .tab-links li, .main-content .main-links ul li{
     display: inline-block;
     margin-right: 15px;
     -webkit-box-shadow: 0 0 5px 1px rgba(225,225,225,1);
@@ -459,10 +457,10 @@ header.platform-header .logged-user-info li ul.dropdown-menu>li>a:hover{
     box-shadow: 0 0 5px 1px rgba(225,225,225,1);
     padding: 6px 15px 9px 15px;
 }
-.main-content.publishers-list .tabs .tab-links li{
+.main-content.publishers-list .tabs .tab-links li, .main-content .main-links ul li{
     cursor: pointer;
 }
-.main-content.publishers-list .tabs .tab-links li:hover a{
+.main-content.publishers-list .tabs .tab-links li:hover a, .main-content .main-links ul li:hover a{
     text-decoration: none;
 }
 .main-content.publishers-list .tabs .tab-links li.active{

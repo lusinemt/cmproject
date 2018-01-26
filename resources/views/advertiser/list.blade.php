@@ -30,16 +30,9 @@
                     </li>
                     <li>
                         <span>Account Manager:</span>
-                        <button class="btn crunchie-btn">All</button>
-                        <button class="btn crunchie-btn">Alex</button>
-                        <button class="btn crunchie-btn">Andy</button>
-                        <button class="btn crunchie-btn">Gayane</button>
-                        <button class="btn crunchie-btn">Lusine</button>
-                        <button class="btn crunchie-btn">Darreb</button>
-                        <button class="btn crunchie-btn">Gohar</button>
-                        <button class="btn crunchie-btn">Vaz</button>
-                        <button class="btn crunchie-btn">Tommer</button>
-                        <button class="btn crunchie-btn">Mauro</button>
+                        @foreach($objAllAdvertisers->allManangers as $allManangers)
+                            <button class="btn crunchie-btn">{{$allManangers -> managername}}</button>
+                        @endforeach
                     </li>
                 </ul>
             </div>
@@ -68,7 +61,6 @@
                                 <td>{{ $advertiser->advertiserid }}</td>
                                 <td>{{ $advertiser->advertisername }}</td>
                                 <td>{{ $advertiser->account->managername }}</td>
-                                <td>{{ $advertiser->accountmanagerid }}</td>
                                 <td>{{ $advertiser->username }}/{{ $advertiser->rawpassword }}</td>
                                 <td></td>
                                 <td></td>

@@ -58,3 +58,4 @@
     <div class="height-35"></div>
     <script src="{{ asset('js/publishers/publisher-placementstats.js') }}"></script>
 @endsection
+
