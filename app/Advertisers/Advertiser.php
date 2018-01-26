@@ -11,6 +11,6 @@ class Advertiser extends Model
 
     public function account()
     {
-       return $this->hasOne(AccountManager::class, 'accountmanagerid', 'accountmanagerid');
+       return $this->belongsTo(AccountManager::class, 'accountmanagerid', 'accountmanagerid');
     }
 }
